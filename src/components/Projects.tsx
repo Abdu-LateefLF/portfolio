@@ -3,7 +3,7 @@ import ToolBadge from "./ToolBadge";
 
 function Projects() {
   return (
-    <div className="px-8 mx-auto max-w-[1000px] mb-32">
+    <div id="Projects" className="section px-8 mx-auto max-w-[1000px]">
       <span className="block text-3xl font-bold mb-8 text-center">MY PROJECTS</span>
       <div className="mb-16">
         <div className="grid grid-cols-2 my-5">

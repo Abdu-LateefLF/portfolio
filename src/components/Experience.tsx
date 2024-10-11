@@ -1,7 +1,7 @@
 function Experience() {
   return (
-    <div className="px-8 mb-32">
-      <span className="block text-3xl font-bold mb-8 text-center">WORK EXPERIENCE</span>
+    <div id="Experience" className="section px-8 mb-44">
+      <span className="block text-3xl font-bold pt-32 mb-8 text-center">WORK EXPERIENCE</span>
       <div className=" w-[80%] max-w-[1400px] mx-auto">
         <div className="text-center pt-8 pb-3">
           <div className="inline-block object-contain rounded-lg w-20 h-20 overflow-hidden">
@@ -15,7 +15,7 @@ function Experience() {
         <p className="px-8 pb-8 text-center">Evaluate AI content for accuracy and quality, refining two language models.
           Create natural and detailed prompts to improve AI output, enhancing precision and relevance.</p>
       </div>
-    </div >
+    </div>
   );
 }
 

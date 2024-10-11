@@ -7,11 +7,16 @@ import Introduction from "./components/Introduction";
 import NavBar from "./components/NavBar";
 import Projects from "./components/Projects";
 import TechStack from "./components/TechStack";
+import SectionProvider from "./contexts/SectionProvider";
 
 function App() {
+
   return (
     <div className="font-sans text-gray-700">
-      <NavBar />
+      <SectionProvider>
+        <NavBar />
+      </SectionProvider>
+
       <div className="mx-auto max-w-[1400px]">
         <Introduction />
         <About />
@@ -21,6 +26,7 @@ function App() {
         <Experience />
       </div>
       <Contact />
+
       <Copyright />
     </div>
   );

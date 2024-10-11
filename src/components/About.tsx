@@ -1,6 +1,6 @@
 function About() {
   return (
-    <div className="mt-2 mb-32 px-8  mx-auto max-w-[1000px] text-center">
+    <div id="About" className="section mt-2 mb-32 px-8  mx-auto max-w-[1000px] text-center">
       <div className="font-bold text-3xl my-12">ABOUT ME</div>
       <p>
         As an ambitious software engineering student, I am actively pursuing internship

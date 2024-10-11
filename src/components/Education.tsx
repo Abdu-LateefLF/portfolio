@@ -1,6 +1,6 @@
 function Education() {
   return (
-    <div className="px-8 mb-32">
+    <div id="Education" className="section px-8 mb-32">
       <span className="block text-3xl font-bold mb-8 text-center">EDUCATION</span>
       <div className=" w-[80%] max-w-[1400px] mx-auto">
         <div className="text-center pt-1 pb-3">
