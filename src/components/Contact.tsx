@@ -19,9 +19,6 @@ function Contact() {
             <div className="md:my-5">
               <InfoCard title="GitHub" content="github.com/Abdu-LateefLF" href="https://github.com/Abdu-LateefLF" />
             </div>
-            <div className="my-5">
-              <InfoCard title="Telephone" content="+1 (587) 228-1366" href="tel:5872281366" />
-            </div>
           </div>
         </div>
       </div>
