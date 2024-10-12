@@ -12,7 +12,7 @@ import SectionProvider from "./contexts/SectionProvider";
 function App() {
 
   return (
-    <div className="font-sans text-gray-700">
+    <div className="font-sans bg-gray-900 text-gray-400">
       <SectionProvider>
         <NavBar />
       </SectionProvider>
@@ -22,8 +22,8 @@ function App() {
         <About />
         <TechStack />
         <Education />
-        <Projects />
         <Experience />
+        <Projects />
       </div>
       <Contact />
 
