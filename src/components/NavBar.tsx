@@ -39,8 +39,11 @@ function NavBar() {
         <div onClick={() => setShowMenu(!showMenu)}>
           {!showMenu ? <CiMenuFries size={30} className="pt-1" /> : <MdOutlineClose size={30} className="pt-1" />}
         </div>
-        <div className="fixed top-0 left-0 mt-24 w-full px-4" ref={menuRef}>
-          <div className={`bg-gray-800 drop-shadow-xl rounded-md transition-all duration-150 ease-in-out ${showMenu ? "opacity-100 visible" : "opacity-0 scale-90 invisible"}`}>
+        <div
+          className={`fixed top-0 left-0 mt-24 w-full px-4 transition-all duration-150 ease-in-out ${showMenu ? "opacity-100 visible" : "opacity-0 scale-90 invisible -z-50"}`}
+          ref={menuRef}
+        >
+          <div className="bg-gray-800 drop-shadow-xl rounded-md">
             <div className="p-5">
               {["About", "Education", "Experience", "Projects", "Contact"].map((section, index) => (
                 <MenuButton key={index} section={section} />

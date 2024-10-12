@@ -21,8 +21,8 @@ function Introduction() {
         </div>
         <p>Motivated by opportunites to learn and develop.</p>
       </section>
-      <div className="w-[320px] h-[320px] rounded-full object-fill overflow-hidden mx-auto mt-8">
-        <img src="/profile14.jpg" />
+      <div className="max-w-[320px] h-[320px] rounded-full object-cover border-[3px] border-indigo-500 drop-shadow-2xl overflow-hidden mx-auto mt-8">
+        <img src="/profile01.jpg" />
       </div>
     </div>
   );
