@@ -36,7 +36,7 @@ function Projects() {
         </div>
       </div>
 
-      <hr />
+      <hr className="text-gray-500" />
 
       <div className="my-16">
         <div className="grid md:grid-cols-2 my-5">
@@ -50,7 +50,7 @@ function Projects() {
 
             <div>
               A platform that allows people to view historical art from the <b className="font-semibold text-indigo-400">
-                Harvard Art Museam</b>, curate personalized galleries,
+                Harvard Art Museum</b>, curate personalized galleries,
               and share their collections with friends.
             </div>
             <div>
@@ -70,7 +70,7 @@ function Projects() {
         </div>
       </div>
 
-      <hr />
+      <hr className="text-gray-500" />
 
       <div className="my-16">
         <div className="grid md:grid-cols-2 my-5">
