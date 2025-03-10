@@ -12,7 +12,7 @@ function Experience() {
         </div>
         <div className="ml-2 text-center mb-5">
           <div className="font-semibold text-lg">Outlier AI</div>
-          <span>AI Trainer | July 2024 - Present</span>
+          <span>AI Writing Evaluator | July 2024 - Present</span>
         </div>
         <p className="px-2 md:px-8 pb-8 text-center">
           Employing prompt engineering to design creative and comprehensive
