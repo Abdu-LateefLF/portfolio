@@ -1,6 +1,5 @@
 import About from "./components/About";
 import Contact from "./components/Contact";
-import Copyright from "./components/Copyright";
 import Education from "./components/Education";
 import Experience from "./components/Experience";
 import Introduction from "./components/Introduction";
