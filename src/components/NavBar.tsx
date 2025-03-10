@@ -12,10 +12,7 @@ function NavBar() {
   // Close the dropdown when user clicks off
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (
-        menuRef.current &&
-        !menuRef.current.contains(event.target as Node)
-      ) {
+      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
         setShowMenu(false);
       }
     };
@@ -27,32 +24,49 @@ function NavBar() {
   }, [showMenu]);
 
   return (
-    <header className="sticky top-0 left-0 bg-gray-900 z-10 p-6 md:p-8 flex justify-between mb-8 font-semibold text-lg">
-      <a className="bg-sky-600 text-white rounded-md py-2 px-3 drop-shadow-md" href="/Abdu-Lateef Lekan-Fadeyi's Resume.pdf" download>Download My Resume</a>
-      <div className="hidden md:inline-block">
-        {["About", "Education", "Experience", "Projects", "Contact"].map((section, index) => (
-          <NavButton key={index} section={section} />
-        ))}
+    <header className="sticky top-0 left-0 bg-gray-900 z-10 p-6 md:p-8 flex justify-between items-center mb-8 font-semibold text-lg">
+      <a
+        className="bg-sky-600 text-sm text-white rounded-sm py-2 px-3 drop-shadow-md hover:bg-sky-700 transition-colors"
+        href="/Abdu-Lateef Lekan-Fadeyi's Resume.pdf"
+        download
+      >
+        Download My Resume
+      </a>
+      <div className="hidden md:flex space-x-6">
+        {["About", "Education", "Experience", "Projects", "Contact"].map(
+          (section, index) => (
+            <NavButton key={index} section={section} />
+          )
+        )}
       </div>
 
       <div className="block md:hidden">
         <div onClick={() => setShowMenu(!showMenu)}>
-          {!showMenu ? <CiMenuFries size={30} className="pt-1" /> : <MdOutlineClose size={30} className="pt-1" />}
+          {!showMenu ? (
+            <CiMenuFries size={30} className="pt-1 text-white" />
+          ) : (
+            <MdOutlineClose size={30} className="pt-1 text-white" />
+          )}
         </div>
+
         <div
-          className={`fixed top-0 left-0 mt-24 w-full px-4 transition-all duration-150 ease-in-out ${showMenu ? "opacity-100 visible" : "opacity-0 scale-90 invisible -z-50"}`}
+          className={`fixed top-0 left-0 mt-24 w-full px-4 bg-gray-800 drop-shadow-xl rounded-md transition-all duration-200 ease-in-out ${
+            showMenu
+              ? "opacity-100 visible scale-100 z-20"
+              : "opacity-0 scale-90 invisible -z-50"
+          }`}
           ref={menuRef}
         >
-          <div className="bg-gray-800 drop-shadow-xl rounded-md">
-            <div className="p-5">
-              {["About", "Education", "Experience", "Projects", "Contact"].map((section, index) => (
+          <div className="p-5 space-y-4">
+            {["About", "Education", "Experience", "Projects", "Contact"].map(
+              (section, index) => (
                 <MenuButton key={index} section={section} />
-              ))}
-            </div>
+              )
+            )}
           </div>
         </div>
       </div>
-    </header >
+    </header>
   );
 }
 

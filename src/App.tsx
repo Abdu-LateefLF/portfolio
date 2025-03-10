@@ -10,7 +10,6 @@ import TechStack from "./components/TechStack";
 import SectionProvider from "./contexts/SectionProvider";
 
 function App() {
-
   return (
     <div className="font-sans bg-gray-900 text-gray-400">
       <SectionProvider>
@@ -26,8 +25,6 @@ function App() {
         <Projects />
       </div>
       <Contact />
-
-      <Copyright />
     </div>
   );
 }
