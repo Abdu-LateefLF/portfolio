@@ -15,7 +15,13 @@ function Experience() {
           <span>ML/AI Software Engineer Intern | May 2025 - Present</span>
         </div>
         <p className="px-2 md:px-8 pb-8 text-center">
-        Developed full-stack authentication features using FastAPI, Next.js, and React Hook Form with JWT and SendGrid integration. Automated Postman workflows using JavaScript for seamless token management. Built a TensorFlow-based video analysis pipeline using object detection.
+          Designed a cron service to automate club fee charges and payment
+          reminders, boosting operational efficiency by 35%. Created user
+          authentication and profile management flows with FastAPI and Next.js,
+          and AWS S3 for file storage. Built a Super Admin dashboard with
+          FastAPI and Next.js, streamlining club creation, reducing manual
+          effort by 20%. Developed a CNN pipeline with PyTorch, Mediapipe, and
+          OpenCV to analyze basketball shots and provide feedback.
         </p>
       </div>
       <div className="md:w-[80%] max-w-[1400px] mx-auto">
