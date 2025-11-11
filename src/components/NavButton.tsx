@@ -20,10 +20,7 @@ function NavButton({ section }: Props) {
   };
 
   return (
-    <div
-      className="relative inline-block mx-3 cursor-pointer"
-      onClick={handleScroll}
-    >
+    <div className="relative mx-3 cursor-pointer" onClick={handleScroll}>
       <span
         className={`text-sm text-white pb-1 px-2 transition-all hover:text-cyan-400 ${
           currentSection === section ? "font-bold" : ""
