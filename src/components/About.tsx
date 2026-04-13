@@ -25,25 +25,24 @@ export default function About() {
           className="space-y-4 text-slate-500 leading-relaxed"
         >
           <p>
-            Hello! I'm Abdu-Lateef, a software engineering student at the{" "}
+            I am a software engineering student at the{" "}
             <span className="text-slate-700 font-medium">
               University of Guelph
             </span>{" "}
-            (BComp Honours, Business minor). I currently have a 4.0 GPA and am
-            expected to graduate in May 2028.
+            pursuing a BComp Honours degree with a Business minor. I currently
+            hold a 4.0 GPA and expect to graduate in May 2028.
           </p>
           <p>
-            I enjoy building across the full stack, from backend APIs and
-            system design to frontend interfaces. I'm particularly interested in
-            the intersection of software engineering and data, whether that's
-            designing a DSL for financial queries, training ML models, or
-            building scalable systems.
+            I am drawn to problems at the intersection of systems and
+            intelligence, whether that involves designing a financial query DSL
+            like <span className="text-slate-700 font-medium">FinQL</span>,
+            deploying machine learning models, or building production-grade APIs
+            with real-time infrastructure.
           </p>
           <p>
-            Outside of development, I'm interested in algorithms, system
-            design, and solving complex problems with simple, elegant
-            solutions. I'm looking for internship and full-time opportunities
-            where I can contribute and continue growing as an engineer.
+            I care about building software that is not only technically strong
+            but genuinely useful. I enjoy working on products that people rely
+            on daily and that create measurable impact.
           </p>
         </motion.div>
 

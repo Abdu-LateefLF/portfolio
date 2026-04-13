@@ -6,7 +6,11 @@ import { FiGithub, FiLinkedin, FiMail, FiArrowDown } from "react-icons/fi";
 const fadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 30 },
   animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.6, ease: [0.25, 0.1, 0.25, 1], delay } as Transition,
+  transition: {
+    duration: 0.6,
+    ease: [0.25, 0.1, 0.25, 1],
+    delay,
+  } as Transition,
 });
 
 export default function Introduction() {
@@ -58,17 +62,14 @@ export default function Introduction() {
         {...fadeUp(0.5)}
         className="mt-6 max-w-xl text-base sm:text-lg text-slate-500 leading-relaxed"
       >
-        AI-focused software developer and software engineering student at the
-        University of Guelph with a 4.0 GPA. I build full-stack apps, ML
-        systems, and developer tools. I'm currently co-founding{" "}
-        <span className="text-slate-700 font-medium">Classwise AI</span>, an
-        AI grading platform saving teachers 10+ hours a week.
+        AI-focused software developer and software engineering student. I build
+        full-stack apps, ML systems, and developer tools. I'm currently
+        co-founding{" "}
+        <span className="text-slate-700 font-medium">Classwise AI</span>, an AI
+        grading platform saving teachers 10+ hours a week.
       </motion.p>
 
-      <motion.div
-        {...fadeUp(0.65)}
-        className="mt-8 flex items-center gap-5"
-      >
+      <motion.div {...fadeUp(0.65)} className="mt-8 flex items-center gap-5">
         <a
           href="https://github.com/Abdu-LateefLF"
           target="_blank"
@@ -96,15 +97,14 @@ export default function Introduction() {
         </a>
       </motion.div>
 
-      <motion.div
-        {...fadeUp(0.8)}
-        className="mt-16"
-      >
+      <motion.div {...fadeUp(0.8)} className="mt-16">
         <a
           href="#about"
           onClick={(e) => {
             e.preventDefault();
-            document.getElementById("about")?.scrollIntoView({ behavior: "smooth" });
+            document
+              .getElementById("about")
+              ?.scrollIntoView({ behavior: "smooth" });
           }}
           className="inline-flex items-center gap-2 text-sm text-slate-400 hover:text-accent transition-colors"
         >
