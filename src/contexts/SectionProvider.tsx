@@ -1,4 +1,4 @@
-import React, { ReactNode, useEffect, useState } from "react";
+import React, { ReactNode, useEffect, useRef, useState } from "react";
 
 interface Props {
   children: ReactNode;
@@ -14,30 +14,38 @@ export const SectionContext = React.createContext<SectionContextType>(
 );
 
 function SectionProvider({ children }: Props) {
-  const [currentSection, setCurrentSection] = useState("Introduction");
+  const [currentSection, setCurrentSection] = useState("hero");
+  const observerRef = useRef<IntersectionObserver | null>(null);
 
   useEffect(() => {
-    const sections = document.querySelectorAll(".section");
+    const observe = () => {
+      const sections = document.querySelectorAll(".section");
+      if (sections.length === 0) return;
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setCurrentSection(entry.target.id);
-          }
-        });
-      },
-      {
-        root: null,
-        threshold: 0.2,
-        rootMargin: "0px 0px -40% 0px",
-      }
-    );
+      observerRef.current?.disconnect();
 
-    sections.forEach((section) => observer.observe(section));
+      observerRef.current = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              setCurrentSection(entry.target.id);
+            }
+          });
+        },
+        {
+          root: null,
+          threshold: 0.2,
+          rootMargin: "0px 0px -40% 0px",
+        }
+      );
+
+      sections.forEach((section) => observerRef.current!.observe(section));
+    };
+
+    observe();
 
     return () => {
-      observer.disconnect();
+      observerRef.current?.disconnect();
     };
   }, []);
 

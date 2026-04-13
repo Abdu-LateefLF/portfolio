@@ -1,171 +1,123 @@
-import { FaExternalLinkAlt } from "react-icons/fa";
-import ToolBadge from "./ToolBadge";
+import { motion } from "framer-motion";
+import { FiGithub, FiExternalLink } from "react-icons/fi";
+import SectionHeader from "./ui/SectionHeader";
+import {
+  fadeUpVariants,
+  fadeUpViewport,
+  fadeUpTransition,
+} from "../lib/motion";
+import projects, { type Project } from "../data/projects";
 
-function Projects() {
+function ProjectCard({ project, index }: { project: Project; index: number }) {
+  const isEven = index % 2 === 0;
+
   return (
-    <div
-      id="Projects"
-      className="section px-5 md:px-10 pb-20 mx-auto max-w-[1000px] text-sm"
-    >
-      <span className="block text-3xl font-bold mb-8 text-center">
-        MY PROJECTS
-      </span>
-      <div className="space-y-16">
-        {/* Project 1: Political Figure Classifier */}
-        <div className="grid md:grid-cols-2 gap-8 items-center">
-          <div className="order-2 md:order-1">
-            <div className="flex justify-between text-lg font-semibold mb-4 md:pl-8">
-              <span className="inline-block">Political Figure Classifier</span>
-              <a href="https://political-figure-classifier-a.vercel.app/">
-                <FaExternalLinkAlt className="mt-1 transition-transform hover:text-indigo-500 hover:scale-125" />
-              </a>
-            </div>
-            <p className="text-gray-600">
-              A machine learning application that classifies political figures
-              in images with high accuracy.
-            </p>
-            <div className="mt-4">
-              <span className="block mb-2 text-sm font-semibold text-gray-700">
-                Created Using:
-              </span>
-              <div className="flex flex-wrap gap-3">
-                {[
-                  "Python",
-                  "TypeScript",
-                  "Flask",
-                  "Vue.js",
-                  "Sci-kit Learn",
-                  "TailwindCSS",
-                ].map((item, index) => (
-                  <ToolBadge key={index}>{item}</ToolBadge>
-                ))}
-              </div>
-            </div>
-          </div>
-          <div className="object-cover w-full h-[200px] md:h-[250px] rounded-sm overflow-hidden order-1 md:order-2">
-            <img
-              src="/Politician Classifier.png"
-              className="w-full h-full object-cover"
-            />
-          </div>
+    <div className={`w-full flex flex-col gap-8 items-stretch`}>
+      {/* Image */}
+      <div className="w-full min-w-0 shrink-0 rounded-2xl overflow-hidden border border-slate-200 bg-slate-100 group self-stretch min-h-[260px]">
+        <img
+          src={project.image}
+          alt={project.title}
+          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+          onError={(e) => {
+            (e.currentTarget as HTMLImageElement).src =
+              "https://placehold.co/800x450/e2e8f0/94a3b8?text=Project+Preview";
+          }}
+        />
+      </div>
+
+      {/* Content */}
+      <div className="w-full min-w-0">
+        <p className="text-accent font-mono text-xs font-medium mb-2 tracking-wide uppercase">
+          Featured Project
+        </p>
+        <h3 className="text-xl sm:text-2xl font-bold text-slate-800 mb-3">
+          {project.title}
+        </h3>
+
+        <div className="bg-white rounded-xl border border-slate-200 shadow-sm p-4 mb-4">
+          <p className="text-slate-500 text-sm leading-relaxed">
+            {project.description}
+          </p>
         </div>
 
-        {/* Project 2: AI Recipe Finder */}
-        <div className="grid md:grid-cols-2 gap-8 items-center">
-          <div className="object-cover w-full h-[220px] rounded-sm overflow-hidden">
-            <img
-              src="/aiRecipeFinder.png"
-              className="w-full h-full object-cover"
-            />
-          </div>
-          <div>
-            <div className="flex justify-between text-lg font-semibold mb-4 md:pl-8">
-              <span className="inline-block">AI Recipe Finder</span>
-              <a href="https://airecipefinder.vercel.app">
-                <FaExternalLinkAlt className="mt-1 transition-transform hover:text-indigo-500 hover:scale-125" />
-              </a>
-            </div>
-            <p className="text-gray-600">
-              A full stack AI recipe recommender that suggests recipes to users
-              based on ingredients they have at home utilizing{" "}
-              <b className="font-semibold text-indigo-400">OpenAI API</b>.
-            </p>
-            <div className="mt-4">
-              <span className="block mb-2 text-sm font-semibold text-gray-700">
-                Created Using:
-              </span>
-              <div className="flex flex-wrap gap-3">
-                {[
-                  "React",
-                  "JavaScript/TypeScript",
-                  "Node.js",
-                  "Express.js",
-                  "TailwindCSS",
-                ].map((item, index) => (
-                  <ToolBadge key={index}>{item}</ToolBadge>
-                ))}
-              </div>
-            </div>
-          </div>
+        <ul className="space-y-1.5 mb-4">
+          {project.bullets.map((bullet, i) => (
+            <li
+              key={i}
+              className="flex gap-2 text-sm text-slate-500 leading-relaxed"
+            >
+              <span className="text-accent mt-0.5 shrink-0">▹</span>
+              {bullet}
+            </li>
+          ))}
+        </ul>
+
+        <div className="flex flex-wrap gap-2 mb-4">
+          {project.tags.map((tag) => (
+            <span
+              key={tag}
+              className="text-xs font-mono bg-slate-100 text-slate-600 rounded-md px-2.5 py-1"
+            >
+              {tag}
+            </span>
+          ))}
         </div>
 
-        <hr className="border-gray-300" />
-
-        {/* Project 3: ArtMe - Virtual Art Gallery */}
-        <div className="grid md:grid-cols-2 gap-8 items-center">
-          <div className="order-2 md:order-1">
-            <div className="flex justify-between text-lg font-semibold mb-4 md:pl-8">
-              <span className="inline-block">ArtMe - Virtual Art Gallery</span>
-              <a href="https://art-gallery-lf.vercel.app">
-                <FaExternalLinkAlt className="mt-1 transition-transform hover:text-indigo-500 hover:scale-125" />
-              </a>
-            </div>
-            <p className="text-gray-600">
-              A platform that allows people to view historical art from the{" "}
-              <b className="font-semibold text-indigo-400">
-                Harvard Art Museum
-              </b>
-              , curate personalized galleries, and share their collections with
-              friends.
-            </p>
-            <div className="mt-4">
-              <span className="block mb-2 text-sm font-semibold text-gray-700">
-                Created Using:
-              </span>
-              <div className="flex flex-wrap gap-3">
-                {["HTML", "CSS", "JavaScript", "Node.js", "Express.js"].map(
-                  (item, index) => (
-                    <ToolBadge key={index}>{item}</ToolBadge>
-                  )
-                )}
-              </div>
-            </div>
-          </div>
-          <div className="object-cover w-full h-[200px] md:h-[250px] rounded-sm overflow-hidden order-1 md:order-2">
-            <img src="/ArtMe2.png" className="w-full h-full object-cover" />
-          </div>
-        </div>
-
-        <hr className="border-gray-300" />
-
-        {/* Project 4: Escape The Maze */}
-        <div className="grid md:grid-cols-2 gap-8 items-center">
-          <div className="object-cover w-full h-[200px] md:h-[250px] rounded-sm overflow-hidden text-center">
-            <img
-              src="/escapeTheMaze.png"
-              className="w-full h-full object-cover"
-            />
-          </div>
-          <div>
-            <div className="flex justify-between text-lg font-semibold mb-4 md:pl-8">
-              <span className="inline-block">
-                Escape The Maze - Android Mobile Game
-              </span>
-              <a href="https://play.google.com/store/apps/details?id=com.PurpleSock.EscapeTheMaze&pli=1">
-                <FaExternalLinkAlt className="mt-1 transition-transform hover:text-indigo-500 hover:scale-125" />
-              </a>
-            </div>
-            <p className="text-gray-600">
-              An Android mobile game featuring a first-person character battling
-              an AI-controlled snake, developed in{" "}
-              <b className="font-semibold text-indigo-400">Unity</b> and
-              deployed to the Google Play Store.
-            </p>
-            <div className="mt-4">
-              <span className="block mb-2 text-sm font-semibold text-gray-700">
-                Created Using:
-              </span>
-              <div className="flex flex-wrap gap-3">
-                {["C#", "Unity 3D"].map((item, index) => (
-                  <ToolBadge key={index}>{item}</ToolBadge>
-                ))}
-              </div>
-            </div>
-          </div>
+        <div className="flex items-center gap-4">
+          {project.githubUrl && (
+            <a
+              href={project.githubUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1.5 text-sm text-slate-500 hover:text-accent transition-colors"
+              aria-label={`${project.title} GitHub`}
+            >
+              <FiGithub size={16} />
+              GitHub
+            </a>
+          )}
+          {project.liveUrl && (
+            <a
+              href={project.liveUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1.5 text-sm text-slate-500 hover:text-accent transition-colors"
+              aria-label={`${project.title} live demo`}
+            >
+              <FiExternalLink size={16} />
+              Live Demo
+            </a>
+          )}
         </div>
       </div>
     </div>
   );
 }
 
-export default Projects;
+export default function Projects() {
+  return (
+    <section id="projects" className="section py-24">
+      <motion.div
+        {...fadeUpViewport}
+        variants={fadeUpVariants}
+        transition={fadeUpTransition()}
+      >
+        <SectionHeader index="05. Projects" title="Some things I've built" />
+      </motion.div>
+
+      <div className="space-y-20">
+        {projects.map((project, idx) => (
+          <motion.div
+            key={project.title}
+            {...fadeUpViewport}
+            variants={fadeUpVariants}
+            transition={fadeUpTransition(0.1)}
+          >
+            <ProjectCard project={project} index={idx} />
+          </motion.div>
+        ))}
+      </div>
+    </section>
+  );
+}

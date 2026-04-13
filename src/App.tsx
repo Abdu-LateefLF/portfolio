@@ -1,30 +1,33 @@
+import SectionProvider from "./contexts/SectionProvider";
+import Sidebar from "./components/Sidebar";
+import Introduction from "./components/Introduction";
 import About from "./components/About";
-import Contact from "./components/Contact";
+import TechStack from "./components/TechStack";
 import Education from "./components/Education";
 import Experience from "./components/Experience";
-import Introduction from "./components/Introduction";
-import NavBar from "./components/NavBar";
 import Projects from "./components/Projects";
-import TechStack from "./components/TechStack";
-import SectionProvider from "./contexts/SectionProvider";
+import Contact from "./components/Contact";
 
 function App() {
   return (
-    <div className="font-sans bg-gray-900 text-gray-400">
-      <SectionProvider>
-        <NavBar />
-      </SectionProvider>
+    <SectionProvider>
+      <div className="min-h-screen bg-slate-50 font-sans">
+        <Sidebar />
 
-      <div className="mx-auto max-w-[1400px]">
-        <Introduction />
-        <About />
-        <TechStack />
-        <Education />
-        <Experience />
-        <Projects />
+        {/* Main scrollable content, offset by sidebar width on large screens */}
+        <main className="lg:ml-72 pt-[61px] lg:pt-0">
+          <div className="max-w-5xl mx-auto px-6 lg:px-12">
+            <Introduction />
+            <About />
+            <TechStack />
+            <Education />
+            <Experience />
+            <Projects />
+          </div>
+          <Contact />
+        </main>
       </div>
-      <Contact />
-    </div>
+    </SectionProvider>
   );
 }
 
