@@ -8,9 +8,7 @@ import {
 } from "../lib/motion";
 import projects, { type Project } from "../data/projects";
 
-function ProjectCard({ project, index }: { project: Project; index: number }) {
-  const isEven = index % 2 === 0;
-
+function ProjectCard({ project }: { project: Project; index: number }) {
   return (
     <div className={`w-full flex flex-col gap-8 items-stretch`}>
       {/* Image */}

@@ -29,22 +29,21 @@ export default function About() {
             <span className="text-slate-700 font-medium">
               University of Guelph
             </span>{" "}
-            pursuing a BComp Honours degree with a Business minor. I have a 4.0
-            GPA and expect to graduate in May 2028.
+            (BComp Honours, Business minor). I currently have a 4.0 GPA and am
+            expected to graduate in May 2028.
           </p>
           <p>
-            I enjoy building across the full stack, from production-grade
-            backend APIs and infrastructure to polished frontend experiences.
-            I'm especially drawn to problems at the intersection of software
-            engineering and data, whether that means designing a custom DSL for
-            financial queries, training ML classifiers, or architecting scalable
-            systems.
+            I enjoy building across the full stack, from backend APIs and
+            system design to frontend interfaces. I'm particularly interested in
+            the intersection of software engineering and data, whether that's
+            designing a DSL for financial queries, training ML models, or
+            building scalable systems.
           </p>
           <p>
-            Outside of coding, I'm interested in algorithms, system design, and
-            elegant solutions to hard problems. I'm seeking internship and
-            full-time opportunities where I can grow and contribute
-            meaningfully.
+            Outside of development, I'm interested in algorithms, system
+            design, and solving complex problems with simple, elegant
+            solutions. I'm looking for internship and full-time opportunities
+            where I can contribute and continue growing as an engineer.
           </p>
         </motion.div>
 
