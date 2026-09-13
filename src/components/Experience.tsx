@@ -22,12 +22,20 @@ function ExperienceCard({
       <div className={`bg-white rounded-2xl border border-slate-200 shadow-sm p-6 sm:p-8 w-full ${!isLast ? "mb-8" : ""}`}>
         <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-1">
           <div className="flex items-center gap-3">
-            <img
-              src={item.logo}
-              alt={item.company}
-              className="w-8 h-8 rounded-md object-contain border border-slate-100"
-              onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }}
-            />
+            {item.logo ? (
+              <img
+                src={item.logo}
+                alt={item.company}
+                className="w-8 h-8 rounded-md object-contain border border-slate-100"
+              />
+            ) : (
+              <span
+                aria-hidden="true"
+                className="w-8 h-8 rounded-md bg-accent/10 text-accent text-xs font-bold grid place-items-center"
+              >
+                {item.company.slice(0, 2).toUpperCase()}
+              </span>
+            )}
             <div>
               <h3 className="text-base font-bold text-slate-800">{item.role}</h3>
               <p className="text-accent font-medium text-sm">{item.company}</p>
@@ -68,7 +76,7 @@ export default function Experience() {
         variants={fadeUpVariants}
         transition={fadeUpTransition()}
       >
-        <SectionHeader index="04. Experience" title="Where I've worked" />
+        <SectionHeader index="05. Experience" title="Where I've worked" />
       </motion.div>
 
       <div>

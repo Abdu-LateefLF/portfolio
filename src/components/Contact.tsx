@@ -66,7 +66,7 @@ export default function Contact() {
         </motion.div>
 
         <p className="mt-16 text-xs text-slate-400">
-          Designed &amp; built by Abdu-Lateef Lekan-Fadeyi · {new Date().getFullYear()}
+          Built by Abdu-Lateef Lekan-Fadeyi · {new Date().getFullYear()}
         </p>
       </div>
     </section>

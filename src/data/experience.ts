@@ -2,7 +2,7 @@ export interface ExperienceItem {
   company: string;
   role: string;
   period: string;
-  logo: string;
+  logo?: string;
   bullets: string[];
   tags: string[];
 }
@@ -10,16 +10,30 @@ export interface ExperienceItem {
 const experience: ExperienceItem[] = [
   {
     company: "Classwise AI",
-    role: "Technical Co-Founder & Chief AI Officer",
+    role: "Co-Founder & Chief AI Officer (CAIO)",
     period: "May 2025 – Present",
     logo: "/Classwise Logo.svg",
     bullets: [
-      "Selected for NEXT AI Canada & Google for Startups; recognized as a top-tier venture by the McGill Dobson Cup.",
-      "Led the architecture of an AI grading platform used by 35+ teachers, saving 10+ hours of manual grading per week.",
-      "Integrated Google Classroom and Canvas to sync courses and submissions, cutting teacher setup time by 90%.",
-      "Architected AI grading pipelines on GCP (Cloud Run, Pub/Sub) and Vercel, powering 3,100+ automated gradings.",
+      "Scaled the platform to 8,200+ assignments graded year to date, generating $56K CAD in revenue and $47K CAD in prize wins.",
+      "Architected LangGraph AI grading pipelines with multimodal agents, model routing, async workers, and PostgreSQL state.",
+      "Built multimodal document pipelines for PDF and image grading with segmentation, extraction, validation, and retries.",
+      "Built evaluation infrastructure measuring grading accuracy, failure modes, latency, token usage, and inference costs.",
+      "Engineered distributed systems with queues, heartbeats, retries, and database locking for reliable AI workloads.",
     ],
-    tags: ["Node.js", "PostgreSQL", "GCP", "Vercel", "CI/CD"],
+    tags: ["LangGraph", "Agentic AI Development", "Google Cloud Platform (GCP)", "Node.js", "Next.js"],
+  },
+  {
+    company: "AskCipher",
+    role: "AI Software Developer Intern",
+    period: "May 2026 – Aug 2026",
+    logo: "/AskCipher-logo.png",
+    bullets: [
+      "Architected distributed microservices, solving cross-replica WebSocket routing for an AI agent to control a browser.",
+      "Built a stateful LangGraph agent with PostgreSQL checkpointing so browser tasks survive disconnects and resume reliably.",
+      "Designed a permission layer where tool identity classifies actions as safe reads or risky writes.",
+      "Implemented a BM25 and cross-encoder reranking pipeline for chat memory, avoiding embedding infrastructure costs entirely.",
+    ],
+    tags: ["LangGraph", "Docker", "FastAPI", "PostgreSQL", "Agentic AI Development", "Microservices", "Google Cloud Platform (GCP)"],
   },
   {
     company: "Magnet Forensics",
@@ -27,12 +41,12 @@ const experience: ExperienceItem[] = [
     period: "Sep 2025 – Dec 2025",
     logo: "/MagnetForensics-logo.png",
     bullets: [
-      "Built modular .NET helper libraries using DI, Builder, and Factory patterns to create a testable, maintainable architecture.",
-      "Implemented unit tests and mocks with xUnit and Moq in CI/CD pipelines, ensuring reliable artifact ingestion across 6 products.",
-      "Queried SQLite with LINQ and EF Core, and parsed JSON and plist files to process forensic data used across 6 products.",
+      "Built helper libraries using DI, Builder, and Factory patterns to enable a modular, testable .NET architecture.",
+      "Implemented unit and mock tests with xUnit and Moq, backed by regression testing and CI/CD pipelines for reliable artifact ingestion.",
+      "Queried SQLite databases with LINQ and EF Core, parsed JSON and PLists, and processed data for use across 6 products.",
       "Used reverse engineering and Linux shell tools to map undocumented file paths and recover unsupported artifacts.",
     ],
-    tags: [".NET", "C#", "xUnit", "Moq", "SQLite", "EF Core", "CI/CD", "Linux"],
+    tags: [".NET", "C#", "AWS", "SQL"],
   },
   {
     company: "D2AI.ca",
@@ -40,12 +54,10 @@ const experience: ExperienceItem[] = [
     period: "May 2025 – Aug 2025",
     logo: "/D2AI-logo.jpg",
     bullets: [
-      "Designed a scheduled backend service to automate club fee charges and reminders, improving efficiency by 35%.",
-      "Built a Super Admin dashboard with FastAPI and Next.js, streamlining club creation and reducing manual effort by 20%.",
       "Built user authentication and profile management flows with FastAPI, Next.js, and AWS S3 for file storage.",
-      "Developed a CNN pipeline with PyTorch, MediaPipe, and OpenCV to analyze basketball shots and provide real-time feedback.",
+      "Developed a CNN pipeline with PyTorch, MediaPipe, and OpenCV to analyze basketball shots and provide feedback.",
     ],
-    tags: ["Python", "FastAPI", "Next.js", "AWS S3", "PyTorch", "OpenCV", "MediaPipe"],
+    tags: ["Python", "FastAPI", "Next.js", "AWS S3", "PyTorch", "OpenCV"],
   },
 ];
 

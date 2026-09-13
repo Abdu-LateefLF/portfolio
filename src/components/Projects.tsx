@@ -102,7 +102,7 @@ export default function Projects() {
         variants={fadeUpVariants}
         transition={fadeUpTransition()}
       >
-        <SectionHeader index="05. Projects" title="Some things I've built" />
+        <SectionHeader index="06. Projects" title="Some things I've built" />
       </motion.div>
 
       <div className="space-y-12 sm:space-y-16 md:space-y-20">

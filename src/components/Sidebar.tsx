@@ -75,7 +75,6 @@ export default function Sidebar() {
             <p className="mt-2 text-sm text-slate-500 leading-snug">
               AI Software Developer
             </p>
-            <p className="text-sm text-slate-400">Software Engineering Student</p>
           </div>
 
           {navContent}

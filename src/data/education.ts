@@ -14,7 +14,7 @@ const education: EducationItem[] = [
     period: "Sep 2023 – May 2028",
     gpa: "4.0 / 4.0 (95% average)",
     highlights: [
-      "Recipient of the Dean's Scholarship ($1,000) for outstanding academic achievement.",
+      "Recipient of the Dean's Scholarship for outstanding academic achievement.",
     ],
     coursework: [
       "Operating Systems",

@@ -1,6 +1,6 @@
 export interface TechItem {
   name: string;
-  icon: string;
+  icon?: string;
 }
 
 export interface TechCategory {
@@ -9,6 +9,7 @@ export interface TechCategory {
 }
 
 const CDN = "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons";
+const SIMPLE_ICONS = "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons";
 
 export const techCategories: TechCategory[] = [
   {
@@ -31,12 +32,16 @@ export const techCategories: TechCategory[] = [
       { name: "React", icon: `${CDN}/react/react-original.svg` },
       { name: "Node.js", icon: `${CDN}/nodejs/nodejs-original.svg` },
       { name: "Next.js", icon: `${CDN}/nextjs/nextjs-original.svg` },
+      { name: "LangGraph", icon: `${SIMPLE_ICONS}/langgraph.svg` },
+      { name: "LangChain", icon: `${SIMPLE_ICONS}/langchain.svg` },
+      { name: ".NET", icon: `${CDN}/dotnetcore/dotnetcore-original.svg` },
       { name: "Flask", icon: `${CDN}/flask/flask-original.svg` },
       { name: "FastAPI", icon: `${CDN}/fastapi/fastapi-original.svg` },
       { name: "Vue", icon: `${CDN}/vuejs/vuejs-original.svg` },
-      { name: "Flutter", icon: `${CDN}/flutter/flutter-original.svg` },
       { name: "TensorFlow", icon: `${CDN}/tensorflow/tensorflow-original.svg` },
       { name: "scikit-learn", icon: `${CDN}/scikitlearn/scikitlearn-original.svg` },
+      { name: "Jest", icon: `${CDN}/jest/jest-plain.svg` },
+      { name: "pytest", icon: `${CDN}/pytest/pytest-original.svg` },
     ],
   },
   {
@@ -44,12 +49,24 @@ export const techCategories: TechCategory[] = [
     items: [
       { name: "Docker", icon: `${CDN}/docker/docker-original.svg` },
       { name: "PostgreSQL", icon: `${CDN}/postgresql/postgresql-original.svg` },
-      { name: "MongoDB", icon: `${CDN}/mongodb/mongodb-original.svg` },
       { name: "Redis", icon: `${CDN}/redis/redis-original.svg` },
-      { name: "MySQL", icon: `${CDN}/mysql/mysql-original.svg` },
       { name: "Git", icon: `${CDN}/git/git-original.svg` },
+      { name: "GitHub", icon: `${CDN}/github/github-original.svg` },
       { name: "Nginx", icon: `${CDN}/nginx/nginx-original.svg` },
-      { name: "Linux", icon: `${CDN}/linux/linux-original.svg` },
+      { name: "Azure", icon: `${CDN}/azure/azure-original.svg` },
+      { name: "AWS", icon: `${CDN}/amazonwebservices/amazonwebservices-plain-wordmark.svg` },
+      { name: "GCP", icon: `${CDN}/googlecloud/googlecloud-original.svg` },
+      { name: "Jupyter", icon: `${CDN}/jupyter/jupyter-original.svg` },
+      { name: "Postman", icon: `${CDN}/postman/postman-original.svg` },
+    ],
+  },
+  {
+    title: "Engineering Practices",
+    items: [
+      { name: "Agile (Scrum)" },
+      { name: "Distributed Systems" },
+      { name: "Design Patterns" },
+      { name: "CI/CD" },
     ],
   },
 ];

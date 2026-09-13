@@ -44,9 +44,9 @@ export default function Introduction() {
           sequence={[
             "build full-stack apps.",
             2000,
-            "develop ML solutions.",
+           "architect AI systems.",
             2000,
-            "love clean architecture.",
+            "engineer distributed systems.",
             2000,
             "ship production code.",
             2000,
@@ -63,8 +63,7 @@ export default function Introduction() {
         className="mt-6 max-w-xl text-base sm:text-lg text-slate-500 leading-relaxed"
       >
         AI-focused software developer and software engineering student. I build
-        full-stack apps, ML systems, and developer tools. I'm currently
-        co-founding{" "}
+        full-stack apps, ML systems, and developer tools. I'm currently co-founding{" "}
         <span className="text-slate-700 font-medium">Classwise AI</span>, an AI
         grading platform saving teachers 10+ hours a week.
       </motion.p>

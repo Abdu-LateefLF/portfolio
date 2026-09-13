@@ -1,4 +1,8 @@
 import { motion } from "framer-motion";
+import type { IconType } from "react-icons";
+import { DiScrum } from "react-icons/di";
+import { LuNetwork, LuWorkflow } from "react-icons/lu";
+import { TbGridPattern } from "react-icons/tb";
 import SectionHeader from "./ui/SectionHeader";
 import {
   fadeUpVariants,
@@ -7,15 +11,30 @@ import {
 } from "../lib/motion";
 import { techCategories, type TechItem } from "../data/techStack";
 
+const LOCAL_ICONS: Record<string, IconType> = {
+  "Agile (Scrum)": DiScrum,
+  "Distributed Systems": LuNetwork,
+  "Design Patterns": TbGridPattern,
+  "CI/CD": LuWorkflow,
+};
+
 function TechBadge({ item }: { item: TechItem }) {
+  const LocalIcon = LOCAL_ICONS[item.name];
+
   return (
     <div className="flex items-center gap-2 bg-slate-50 border border-slate-200 rounded-lg px-3 py-1.5 text-sm text-slate-600 hover:border-accent/40 hover:text-slate-800 transition-all duration-200">
-      <img
-        src={item.icon}
-        alt={item.name}
-        className="w-4 h-4 object-contain"
-        loading="lazy"
-      />
+      {item.icon ? (
+        <img
+          src={item.icon}
+          alt=""
+          className="w-4 h-4 object-contain"
+          loading="lazy"
+        />
+      ) : LocalIcon ? (
+        <LocalIcon aria-hidden="true" className="w-4 h-4 shrink-0 text-accent" />
+      ) : (
+        <span aria-hidden="true" className="w-4 h-4 rounded bg-accent/10" />
+      )}
       <span>{item.name}</span>
     </div>
   );
