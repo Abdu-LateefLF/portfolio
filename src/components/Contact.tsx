@@ -42,7 +42,7 @@ export default function Contact() {
 
           <a
             href="mailto:tomiwafadeyi@gmail.com"
-            className="inline-flex items-center gap-2 text-accent border border-accent rounded-lg px-8 py-3 font-semibold hover:bg-accent hover:text-white transition-all duration-200 mb-12"
+            className="inline-flex items-center gap-2 text-accent border border-accent px-8 py-3 font-semibold hover:bg-accent hover:text-white transition-all duration-200 mb-12"
           >
             <FiMail size={16} />
             Say Hello

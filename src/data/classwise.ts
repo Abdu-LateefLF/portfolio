@@ -13,11 +13,18 @@ export interface Recognition {
   url?: string;
 }
 
+export interface Program {
+  name: string;
+  detail: string;
+  logo: string;
+  url?: string;
+}
+
 export interface FeaturedProject {
   title: string;
   role: string;
   tagline: string;
-  intro: string[];
+  overview: { heading: string; body: string }[];
   image: string;
   imageAlt: string;
   stats: Stat[];
@@ -25,15 +32,26 @@ export interface FeaturedProject {
   tags: string[];
   links: { label: string; url: string }[];
   recognition: Recognition[];
+  programs: Program[];
 }
 
 const classwise: FeaturedProject = {
   title: "Classwise AI",
   role: "Co-Founder & Chief AI Officer · May 2025 – Present",
   tagline: "AI assessment that grades handwritten work the way the teacher would, in minutes.",
-  intro: [
-    "Teachers lose nights and weekends to grading, and students wait days for feedback that would have helped on the next assignment. Classwise lets teachers grade with their own rubrics and answer keys, keeps students working on pen and paper, and returns rubric-aligned feedback while the lesson is still fresh.",
-    "As co-founder and CAIO, I own the AI and most of the platform behind it: the grading agent, the evaluation system that tells us whether it's actually right, the worker pipeline that processes every submission, and the LMS integrations that let schools adopt it without changing how they teach. The teacher always has the final say. AI suggests, they decide.",
+  overview: [
+    {
+      heading: "Problem",
+      body: "Teachers lose nights and weekends to grading, and it's one of the biggest reasons they burn out. Meanwhile, students wait days for feedback that would have helped on the next assignment.",
+    },
+    {
+      heading: "Solution",
+      body: "Classwise grades handwritten work against the teacher's own rubrics and answer keys, so students keep working on pen and paper and get rubric-aligned feedback while the lesson is still fresh. The teacher always has the final say: AI suggests, they decide.",
+    },
+    {
+      heading: "My role",
+      body: "As co-founder and CAIO, I own the AI and most of the platform behind it: the grading agent, the evaluation system that tells us whether it's actually right, the worker pipeline that processes every submission, and the LMS integrations that let schools adopt it without changing how they teach.",
+    },
   ],
   image: "/classwise/grading-hero.jpg",
   imageAlt: "Classwise grading dashboard showing student work, rubric feedback, and teacher review",
@@ -87,17 +105,33 @@ const classwise: FeaturedProject = {
       url: "https://www.classwise.ai/blog-guides/classwise-ai-is-now-1edtech-certified",
     },
     {
-      title: "NEXT AI 2026 Cohort",
-      org: "NEXT Canada",
-      period: "Mar – Aug 2026",
-      description:
-        "Accepted into one of Canada's most competitive AI accelerators, with business and technical mentorship from experienced founders and operators.",
-    },
-    {
       title: "1st Place, BFN × Black Career Conference Pitch",
       org: "Black Founders Network · University of Toronto",
       period: "Jan 2026",
       description: "Placed first out of 100+ founders from across Canada and won a $5,000 grant.",
+    },
+  ],
+  programs: [
+    {
+      name: "US EdTech Accelerator",
+      detail: "Canadian Consulate in LA · 1 of 5",
+      logo: "/classwise/programs/canada-wordmark.svg",
+    },
+    {
+      name: "NEXT AI",
+      detail: "2026 cohort",
+      logo: "/classwise/programs/next-ai.png",
+      url: "https://www.nextcanada.com/2026-cohort/",
+    },
+    {
+      name: "Google for Startups",
+      detail: "Cloud Program · $25K",
+      logo: "/classwise/programs/google-cloud.svg",
+    },
+    {
+      name: "Claude for Startups",
+      detail: "Anthropic",
+      logo: "/classwise/programs/claude.svg",
     },
   ],
 };

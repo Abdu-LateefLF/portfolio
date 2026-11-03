@@ -22,7 +22,7 @@ function TechBadge({ item }: { item: TechItem }) {
   const LocalIcon = LOCAL_ICONS[item.name];
 
   return (
-    <div className="flex items-center gap-2 bg-slate-50 border border-slate-200 rounded-lg px-3 py-1.5 text-sm text-slate-600 hover:border-accent/40 hover:text-slate-800 transition-all duration-200">
+    <div className="flex items-center gap-2 bg-slate-50 border border-slate-200 px-3 py-1.5 text-sm text-slate-600 hover:border-accent/40 hover:text-slate-800 transition-all duration-200">
       {item.icon ? (
         <img
           src={item.icon}
@@ -33,7 +33,7 @@ function TechBadge({ item }: { item: TechItem }) {
       ) : LocalIcon ? (
         <LocalIcon aria-hidden="true" className="w-4 h-4 shrink-0 text-accent" />
       ) : (
-        <span aria-hidden="true" className="w-4 h-4 rounded bg-accent/10" />
+        <span aria-hidden="true" className="w-4 h-4 bg-accent/10" />
       )}
       <span>{item.name}</span>
     </div>

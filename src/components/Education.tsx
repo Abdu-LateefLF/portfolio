@@ -49,7 +49,7 @@ function EducationCard({ item }: { item: EducationItem }) {
           {item.coursework.map((course) => (
             <span
               key={course}
-              className="text-xs bg-slate-50 border border-slate-200 text-slate-600 rounded-md px-2.5 py-1"
+              className="text-xs bg-slate-50 border border-slate-200 text-slate-600 px-2.5 py-1"
             >
               {course}
             </span>

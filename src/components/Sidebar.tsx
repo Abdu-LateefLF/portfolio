@@ -85,7 +85,7 @@ export default function Sidebar() {
           <a
             href="/Abdu-Lateef Lekan-Fadeyi's Resume.pdf"
             download
-            className="inline-flex items-center justify-center gap-2 text-sm font-semibold text-accent border border-accent rounded-lg px-4 py-2 hover:bg-accent hover:text-white transition-all duration-200"
+            className="inline-flex items-center justify-center gap-2 text-sm font-semibold text-accent border border-accent px-4 py-2 hover:bg-accent hover:text-white transition-all duration-200"
           >
             Resume
           </a>
@@ -168,7 +168,7 @@ export default function Sidebar() {
             <a
               href="/Abdu-Lateef Lekan-Fadeyi's Resume.pdf"
               download
-              className="ml-auto text-sm font-semibold text-accent border border-accent rounded-lg px-4 py-1.5 hover:bg-accent hover:text-white transition-all"
+              className="ml-auto text-sm font-semibold text-accent border border-accent px-4 py-1.5 hover:bg-accent hover:text-white transition-all"
             >
               Resume
             </a>

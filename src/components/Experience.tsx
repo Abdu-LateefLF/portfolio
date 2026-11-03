@@ -27,12 +27,12 @@ function ExperienceCard({
               <img
                 src={item.logo}
                 alt={item.company}
-                className="w-8 h-8 rounded-md object-contain border border-slate-100"
+                className="w-8 h-8 object-contain border border-slate-100"
               />
             ) : (
               <span
                 aria-hidden="true"
-                className="w-8 h-8 rounded-md bg-accent/10 text-accent text-xs font-bold grid place-items-center"
+                className="w-8 h-8 bg-accent/10 text-accent text-xs font-bold grid place-items-center"
               >
                 {item.company.slice(0, 2).toUpperCase()}
               </span>
@@ -58,7 +58,7 @@ function ExperienceCard({
           {item.tags.map((tag) => (
             <span
               key={tag}
-              className="text-xs bg-accent/10 text-accent font-medium rounded-md px-2.5 py-1"
+              className="text-xs bg-accent/10 text-accent font-medium px-2.5 py-1"
             >
               {tag}
             </span>
@@ -73,7 +73,7 @@ function ExperienceCard({
                 .getElementById(item.learnMore!.targetId)
                 ?.scrollIntoView({ behavior: "smooth" })
             }
-            className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-accent border border-accent rounded-lg px-4 py-2 hover:bg-accent hover:text-white transition-all duration-200"
+            className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-accent border border-accent px-4 py-2 hover:bg-accent hover:text-white transition-all duration-200"
           >
             {item.learnMore.label}
             <FiArrowDown size={14} />
