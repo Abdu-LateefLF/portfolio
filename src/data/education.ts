@@ -14,14 +14,12 @@ const education: EducationItem[] = [
     period: "Sep 2023 – May 2028",
     gpa: "4.0 / 4.0 (95% average)",
     highlights: [
-      "Recipient of the Dean's Scholarship for outstanding academic achievement.",
+      "Maintaining top marks in Data Structures, Object-Oriented Programming, and Operating Systems.",
     ],
     coursework: [
-      "Operating Systems",
-      "Analysis & Design of Algorithms",
       "Software System Development & Integration",
-      "Software Design",
-      "Data Structures & OOP",
+      "Analysis & Design of Algorithms",
+      "Parallel Programming",
     ],
   },
 ];

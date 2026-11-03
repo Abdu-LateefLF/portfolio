@@ -34,8 +34,9 @@ function SectionProvider({ children }: Props) {
         },
         {
           root: null,
-          threshold: 0.2,
-          rootMargin: "0px 0px -40% 0px",
+          // A thin band near the top of the viewport, so sections of any height register.
+          threshold: 0,
+          rootMargin: "-35% 0px -64% 0px",
         }
       );
 

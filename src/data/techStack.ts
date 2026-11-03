@@ -38,6 +38,7 @@ export const techCategories: TechCategory[] = [
       { name: "Flask", icon: `${CDN}/flask/flask-original.svg` },
       { name: "FastAPI", icon: `${CDN}/fastapi/fastapi-original.svg` },
       { name: "Vue", icon: `${CDN}/vuejs/vuejs-original.svg` },
+      { name: "PyTorch", icon: `${CDN}/pytorch/pytorch-original.svg` },
       { name: "TensorFlow", icon: `${CDN}/tensorflow/tensorflow-original.svg` },
       { name: "scikit-learn", icon: `${CDN}/scikitlearn/scikitlearn-original.svg` },
       { name: "Jest", icon: `${CDN}/jest/jest-plain.svg` },

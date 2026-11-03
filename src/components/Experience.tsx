@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { FiArrowDown } from "react-icons/fi";
 import SectionHeader from "./ui/SectionHeader";
 import { fadeUpVariants, fadeUpViewport, fadeUpTransition } from "../lib/motion";
 import experience, { type ExperienceItem } from "../data/experience";
@@ -63,6 +64,21 @@ function ExperienceCard({
             </span>
           ))}
         </div>
+
+        {item.learnMore && (
+          <button
+            type="button"
+            onClick={() =>
+              document
+                .getElementById(item.learnMore!.targetId)
+                ?.scrollIntoView({ behavior: "smooth" })
+            }
+            className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-accent border border-accent rounded-lg px-4 py-2 hover:bg-accent hover:text-white transition-all duration-200"
+          >
+            {item.learnMore.label}
+            <FiArrowDown size={14} />
+          </button>
+        )}
       </div>
     </div>
   );
@@ -76,7 +92,7 @@ export default function Experience() {
         variants={fadeUpVariants}
         transition={fadeUpTransition()}
       >
-        <SectionHeader index="05. Experience" title="Where I've worked" />
+        <SectionHeader index="04. Experience" title="Where I've worked" />
       </motion.div>
 
       <div>
