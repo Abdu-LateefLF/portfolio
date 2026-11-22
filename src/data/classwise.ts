@@ -22,7 +22,6 @@ export interface Program {
 
 export interface FeaturedProject {
   title: string;
-  role: string;
   tagline: string;
   overview: { heading: string; body: string }[];
   image: string;
@@ -37,8 +36,8 @@ export interface FeaturedProject {
 
 const classwise: FeaturedProject = {
   title: "Classwise AI",
-  role: "Co-Founder & Chief AI Officer · May 2025 – Present",
-  tagline: "AI assessment that grades handwritten work the way the teacher would, in minutes.",
+  tagline:
+    "AI assessment that grades handwritten work the way the teacher would, in minutes.",
   overview: [
     {
       heading: "Problem",
@@ -54,7 +53,8 @@ const classwise: FeaturedProject = {
     },
   ],
   image: "/classwise/grading-hero.jpg",
-  imageAlt: "Classwise grading dashboard showing student work, rubric feedback, and teacher review",
+  imageAlt:
+    "Classwise grading dashboard showing student work, rubric feedback, and teacher review",
   stats: [
     { value: "14,000+", label: "assignments graded" },
     { value: "1,800+", label: "teacher hours saved" },
@@ -68,11 +68,23 @@ const classwise: FeaturedProject = {
     "Built a pluggable LMS integration layer (Google Pub/Sub, Cloud Functions) for Google Classroom, Canvas, and Moodle, cutting manual setup by 90%.",
     "Built the full-stack teacher app (Node.js, Next.js, PostgreSQL) for managing courses, rosters, and assignments, and for reviewing and publishing student feedback.",
   ],
-  tags: ["TypeScript", "LangGraph", "Node.js", "Next.js", "PostgreSQL", "GCP", "Pub/Sub", "Jest"],
+  tags: [
+    "TypeScript",
+    "LangGraph",
+    "Node.js",
+    "Next.js",
+    "PostgreSQL",
+    "GCP",
+    "Pub/Sub",
+    "Jest",
+  ],
   links: [
     { label: "Visit Classwise", url: "https://www.classwise.ai" },
     { label: "How it works", url: "https://www.classwise.ai/how-it-works" },
-    { label: "Teacher testimonials", url: "https://www.classwise.ai/testimonials" },
+    {
+      label: "Teacher testimonials",
+      url: "https://www.classwise.ai/testimonials",
+    },
   ],
   recognition: [
     {
@@ -82,7 +94,8 @@ const classwise: FeaturedProject = {
       description:
         "Won the $30,000 first-place grant, out of 7 startups, in the K-12 accelerator from Pascal Siakam's PS43 Foundation and DMZ, the #1 university incubator globally.",
       image: "/classwise/siakam-edtech-engine-win.jpg",
-      imageAlt: "Classwise with the Siakam EdTech Engine grant recipients and organizers at Demo Day",
+      imageAlt:
+        "Classwise with the Siakam EdTech Engine grant recipients and organizers at Demo Day",
       url: "https://www.classwise.ai/blog-guides/classwise-wins-siakam-edtech-engine-2026",
     },
     {
@@ -108,7 +121,8 @@ const classwise: FeaturedProject = {
       title: "1st Place, BFN × Black Career Conference Pitch",
       org: "Black Founders Network · University of Toronto",
       period: "Jan 2026",
-      description: "Placed first out of 100+ founders from across Canada and won a $5,000 grant.",
+      description:
+        "Placed first out of 100+ founders from across Canada and won a $5,000 grant.",
     },
   ],
   programs: [

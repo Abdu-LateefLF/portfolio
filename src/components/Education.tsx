@@ -1,7 +1,11 @@
 import { motion } from "framer-motion";
 import { FiCalendar, FiAward, FiBookOpen, FiStar } from "react-icons/fi";
 import SectionHeader from "./ui/SectionHeader";
-import { fadeUpVariants, fadeUpViewport, fadeUpTransition } from "../lib/motion";
+import {
+  fadeUpVariants,
+  fadeUpViewport,
+  fadeUpTransition,
+} from "../lib/motion";
 import education, { type EducationItem } from "../data/education";
 
 function EducationCard({ item }: { item: EducationItem }) {
@@ -9,7 +13,9 @@ function EducationCard({ item }: { item: EducationItem }) {
     <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 sm:p-8">
       <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-4">
         <div>
-          <h3 className="text-lg font-bold text-slate-800">{item.institution}</h3>
+          <h3 className="text-lg font-semibold text-slate-800">
+            {item.institution}
+          </h3>
           <p className="text-slate-500 mt-0.5">{item.degree}</p>
         </div>
         <span className="flex items-center gap-1.5 text-sm text-accent font-medium shrink-0">
@@ -21,7 +27,8 @@ function EducationCard({ item }: { item: EducationItem }) {
       <div className="flex flex-wrap gap-4 text-sm mb-5">
         <span className="flex items-center gap-1.5 text-slate-600">
           <FiAward size={14} className="text-accent" />
-          GPA: <span className="font-semibold text-slate-800 ml-1">{item.gpa}</span>
+          GPA:{" "}
+          <span className="font-semibold text-slate-800 ml-1">{item.gpa}</span>
         </span>
       </div>
 
@@ -32,7 +39,10 @@ function EducationCard({ item }: { item: EducationItem }) {
         </p>
         <ul className="space-y-2">
           {item.highlights.map((highlight, i) => (
-            <li key={i} className="flex gap-2 text-sm text-slate-500 leading-relaxed">
+            <li
+              key={i}
+              className="flex gap-2 text-sm text-slate-500 leading-relaxed"
+            >
               <span className="text-accent mt-0.5 shrink-0">▹</span>
               {highlight}
             </li>
@@ -68,7 +78,7 @@ export default function Education() {
         variants={fadeUpVariants}
         transition={fadeUpTransition()}
       >
-        <SectionHeader index="03. Education" title="Academic background" />
+        <SectionHeader title="Academic background" />
       </motion.div>
 
       <div className="space-y-6">

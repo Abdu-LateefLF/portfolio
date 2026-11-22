@@ -1,5 +1,9 @@
 import { FiArrowUpRight, FiAward, FiExternalLink } from "react-icons/fi";
-import type { FeaturedProject as FeaturedProjectData, Program, Recognition } from "../data/classwise";
+import type {
+  FeaturedProject as FeaturedProjectData,
+  Program,
+  Recognition,
+} from "../data/classwise";
 
 function ProgramCard({ program }: { program: Program }) {
   const body = (
@@ -13,8 +17,12 @@ function ProgramCard({ program }: { program: Program }) {
           className="max-h-full max-w-full object-contain"
         />
       </div>
-      <p className="mt-3 text-[11px] font-semibold text-slate-700 leading-tight">{program.name}</p>
-      <p className="mt-1 text-[10px] text-slate-400 leading-snug">{program.detail}</p>
+      <p className="mt-3 text-xs font-semibold text-slate-700 leading-tight">
+        {program.name}
+      </p>
+      <p className="mt-1 text-xs text-slate-400 leading-snug">
+        {program.detail}
+      </p>
     </>
   );
   const className =
@@ -46,18 +54,24 @@ function RecognitionCard({ item }: { item: Recognition }) {
             loading="lazy"
             decoding="async"
             className={`absolute inset-0 h-full w-full ${
-              isLogo ? "object-contain p-8 bg-white" : "object-cover object-center"
+              isLogo
+                ? "object-contain p-8 bg-white"
+                : "object-cover object-center"
             }`}
           />
         </div>
       )}
       <div className="p-4 flex flex-col gap-1.5 flex-1">
-        <h5 className="text-sm font-bold text-slate-800 leading-snug">{item.title}</h5>
+        <h5 className="text-sm font-semibold text-slate-800 leading-snug">
+          {item.title}
+        </h5>
         <p className="text-xs text-slate-400 font-mono">
           {item.org}
           {item.period && ` · ${item.period}`}
         </p>
-        <p className="text-xs sm:text-sm text-slate-500 leading-relaxed">{item.description}</p>
+        <p className="text-xs sm:text-sm text-slate-500 leading-relaxed">
+          {item.description}
+        </p>
         {item.url && (
           <a
             href={item.url}
@@ -80,18 +94,28 @@ function RecognitionRow({ item }: { item: Recognition }) {
         <FiAward size={14} />
       </span>
       <div className="min-w-0">
-        <h5 className="text-sm font-bold text-slate-800 leading-snug">{item.title}</h5>
+        <h5 className="text-sm font-semibold text-slate-800 leading-snug">
+          {item.title}
+        </h5>
         <p className="text-xs text-slate-400 font-mono mt-0.5">
           {item.org}
           {item.period && ` · ${item.period}`}
         </p>
-        <p className="text-xs sm:text-sm text-slate-500 leading-relaxed mt-1">{item.description}</p>
+        <p className="text-xs sm:text-sm text-slate-500 leading-relaxed mt-1">
+          {item.description}
+        </p>
       </div>
     </div>
   );
 }
 
-export default function FeaturedProject({ project, id }: { project: FeaturedProjectData; id: string }) {
+export default function FeaturedProject({
+  project,
+  id,
+}: {
+  project: FeaturedProjectData;
+  id: string;
+}) {
   const withImages = project.recognition.filter((r) => r.image);
   const withoutImages = project.recognition.filter((r) => !r.image);
   const [primaryLink, ...otherLinks] = project.links;
@@ -111,20 +135,26 @@ export default function FeaturedProject({ project, id }: { project: FeaturedProj
       </div>
 
       <div className="p-5 sm:p-8">
-        <p className="text-accent font-mono text-[11px] sm:text-xs font-medium tracking-wide uppercase">
-          Flagship Project
+        <p className="text-accent font-mono text-xs font-medium tracking-wide">
+          Flagship project
         </p>
-        <h3 className="mt-1.5 text-2xl sm:text-3xl font-bold text-slate-800 leading-tight">
+        <h3 className="mt-1.5 text-2xl sm:text-3xl font-semibold text-slate-800 leading-tight">
           {project.title}
         </h3>
-        <p className="mt-1 text-xs sm:text-sm text-slate-400 font-mono">{project.role}</p>
-        <p className="mt-3 text-base sm:text-lg text-slate-600 leading-snug">{project.tagline}</p>
+        <p className="mt-3 text-base sm:text-lg text-slate-600 leading-snug">
+          {project.tagline}
+        </p>
 
         <dl className="mt-6 grid grid-cols-2 sm:grid-cols-4 gap-3">
           {project.stats.map((stat) => (
-            <div key={stat.label} className="bg-accent/5 border border-accent/15 px-4 py-3">
+            <div
+              key={stat.label}
+              className="bg-accent/5 border border-accent/15 px-4 py-3"
+            >
               <dt className="sr-only">{stat.label}</dt>
-              <dd className="text-xl sm:text-2xl font-extrabold text-accent leading-none">{stat.value}</dd>
+              <dd className="text-xl sm:text-2xl font-semibold text-accent leading-none">
+                {stat.value}
+              </dd>
               <dd className="mt-1.5 text-xs text-slate-500">{stat.label}</dd>
             </div>
           ))}
@@ -133,18 +163,25 @@ export default function FeaturedProject({ project, id }: { project: FeaturedProj
         <div className="mt-7 space-y-6">
           {project.overview.map((section) => (
             <div key={section.heading}>
-              <h4 className="text-sm font-semibold text-slate-700">{section.heading}</h4>
-              <p className="mt-2 text-sm sm:text-[15px] text-slate-500 leading-relaxed">
+              <h4 className="text-sm font-semibold text-slate-700">
+                {section.heading}
+              </h4>
+              <p className="mt-2 text-sm text-slate-500 leading-relaxed">
                 {section.body}
               </p>
             </div>
           ))}
         </div>
 
-        <h4 className="mt-6 text-sm font-semibold text-slate-700">What I built</h4>
+        <h4 className="mt-6 text-sm font-semibold text-slate-700">
+          What I built
+        </h4>
         <ul className="mt-2 space-y-2">
           {project.highlights.map((h, i) => (
-            <li key={i} className="flex gap-2 text-sm text-slate-500 leading-relaxed">
+            <li
+              key={i}
+              className="flex gap-2 text-sm text-slate-500 leading-relaxed"
+            >
               <span className="text-accent mt-0.5 shrink-0">▹</span>
               {h}
             </li>
@@ -155,7 +192,7 @@ export default function FeaturedProject({ project, id }: { project: FeaturedProj
           {project.tags.map((tag) => (
             <span
               key={tag}
-              className="text-[11px] sm:text-xs font-mono bg-slate-100 text-slate-600 px-2 py-0.5 sm:px-2.5 sm:py-1"
+              className="text-xs font-mono bg-slate-100 text-slate-600 px-2 py-0.5 sm:px-2.5 sm:py-1"
             >
               {tag}
             </span>
@@ -207,7 +244,7 @@ export default function FeaturedProject({ project, id }: { project: FeaturedProj
 
         {project.programs.length > 0 && (
           <>
-            <h5 className="mt-7 text-xs font-semibold text-slate-500 uppercase tracking-wider">
+            <h5 className="mt-7 text-xs font-semibold text-slate-500 tracking-wide">
               Programs &amp; selections
             </h5>
             <ul className="mt-3 grid grid-cols-2 sm:grid-cols-4 gap-3">

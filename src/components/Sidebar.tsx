@@ -32,15 +32,17 @@ export default function Sidebar() {
               scrollTo(id);
               setMobileOpen(false);
             }}
-            className={`group flex items-center gap-3 text-sm font-medium py-2 px-3 rounded-lg transition-all duration-200 text-left ${
+            className={`group flex items-center gap-3 text-sm font-medium py-2 px-3 rounded-lg transition-colors duration-200 text-left ${
               active
                 ? "text-accent bg-accent/10"
                 : "text-slate-500 hover:text-slate-800 hover:bg-slate-100"
             }`}
           >
             <span
-              className={`h-px transition-all duration-200 ${
-                active ? "w-8 bg-accent" : "w-4 bg-slate-300 group-hover:w-6 group-hover:bg-slate-400"
+              className={`h-px transition-[width,background-color] duration-200 ${
+                active
+                  ? "w-8 bg-accent"
+                  : "w-4 bg-slate-300 group-hover:w-6 group-hover:bg-slate-400"
               }`}
             />
             {label}
@@ -66,15 +68,12 @@ export default function Sidebar() {
               onClick={() => scrollTo("hero")}
               className="block text-left group"
             >
-              <h1 className="text-xl font-bold text-slate-800 leading-tight group-hover:text-accent transition-colors">
+              <h1 className="text-xl font-semibold text-slate-800 leading-tight group-hover:text-accent transition-colors">
                 Abdu-Lateef
                 <br />
                 Lekan-Fadeyi
               </h1>
             </button>
-            <p className="mt-2 text-sm text-slate-500 leading-snug">
-              AI Software Developer
-            </p>
           </div>
 
           {navContent}
@@ -85,7 +84,7 @@ export default function Sidebar() {
           <a
             href="/Abdu-Lateef Lekan-Fadeyi's Resume.pdf"
             download
-            className="inline-flex items-center justify-center gap-2 text-sm font-semibold text-accent border border-accent px-4 py-2 hover:bg-accent hover:text-white transition-all duration-200"
+            className="inline-flex items-center justify-center gap-2 text-sm font-semibold text-accent border border-accent px-4 py-2 hover:bg-accent hover:text-white transition-colors duration-200"
           >
             Resume
           </a>
@@ -122,7 +121,9 @@ export default function Sidebar() {
       {/* Mobile top bar */}
       <header className="lg:hidden fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur border-b border-slate-200 px-5 py-4 flex items-center justify-between">
         <button onClick={() => scrollTo("hero")} className="text-left">
-          <span className="font-bold text-slate-800 text-sm">Abdu-Lateef LF</span>
+          <span className="font-semibold text-slate-800 text-sm">
+            Abdu-Lateef LF
+          </span>
         </button>
         <button
           onClick={() => setMobileOpen((o) => !o)}
@@ -168,7 +169,7 @@ export default function Sidebar() {
             <a
               href="/Abdu-Lateef Lekan-Fadeyi's Resume.pdf"
               download
-              className="ml-auto text-sm font-semibold text-accent border border-accent px-4 py-1.5 hover:bg-accent hover:text-white transition-all"
+              className="ml-auto text-sm font-semibold text-accent border border-accent px-4 py-1.5 hover:bg-accent hover:text-white transition-colors"
             >
               Resume
             </a>

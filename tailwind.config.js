@@ -12,9 +12,9 @@ export default {
       },
       colors: {
         accent: {
-          DEFAULT: '#6366f1',
-          light: '#818cf8',
-          dark: '#4f46e5',
+          DEFAULT: '#475569',
+          light: '#64748b',
+          dark: '#334155',
         },
       },
     }

@@ -13,7 +13,7 @@ import classwise from "../data/classwise";
 function ProjectCard({ project }: { project: Project }) {
   return (
     <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden flex flex-col sm:flex-row">
-      <div className="relative w-full sm:w-56 md:w-64 shrink-0 aspect-video sm:aspect-auto sm:min-h-[150px] bg-slate-100 overflow-hidden group">
+      <div className="relative w-full sm:w-56 md:w-64 shrink-0 aspect-video sm:aspect-auto sm:min-h-[152px] bg-slate-100 overflow-hidden group">
         <img
           src={project.image}
           alt={project.title}
@@ -28,7 +28,7 @@ function ProjectCard({ project }: { project: Project }) {
       </div>
 
       <div className="p-4 sm:p-5 min-w-0 flex flex-col gap-2.5">
-        <h4 className="text-base sm:text-lg font-bold text-slate-800 leading-snug">
+        <h4 className="text-base sm:text-lg font-semibold text-slate-800 leading-snug">
           {project.title}
         </h4>
         <p className="text-xs sm:text-sm text-slate-500 leading-relaxed">
@@ -39,7 +39,7 @@ function ProjectCard({ project }: { project: Project }) {
           {project.tags.map((tag) => (
             <span
               key={tag}
-              className="text-[11px] font-mono bg-slate-100 text-slate-600 px-2 py-0.5"
+              className="text-xs font-mono bg-slate-100 text-slate-600 px-2 py-0.5"
             >
               {tag}
             </span>
@@ -85,7 +85,7 @@ export default function Projects() {
         variants={fadeUpVariants}
         transition={fadeUpTransition()}
       >
-        <SectionHeader index="05. Projects" title="Some things I've built" />
+        <SectionHeader title="Some things I've built" />
       </motion.div>
 
       <motion.div
@@ -100,7 +100,7 @@ export default function Projects() {
         {...fadeUpViewport}
         variants={fadeUpVariants}
         transition={fadeUpTransition()}
-        className="mt-14 sm:mt-16 mb-5 text-accent font-mono text-xs sm:text-sm font-medium tracking-wide uppercase"
+        className="mt-14 sm:mt-16 mb-5 text-accent font-mono text-xs sm:text-sm font-medium tracking-wide"
       >
         Other projects
       </motion.h3>

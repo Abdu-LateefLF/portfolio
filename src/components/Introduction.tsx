@@ -28,7 +28,7 @@ export default function Introduction() {
 
       <motion.h1
         {...fadeUp(0.2)}
-        className="text-5xl sm:text-6xl lg:text-7xl font-extrabold text-slate-800 leading-tight"
+        className="text-5xl sm:text-6xl lg:text-7xl font-semibold text-slate-800 leading-tight"
       >
         Abdu-Lateef
         <br />
@@ -37,7 +37,7 @@ export default function Introduction() {
 
       <motion.div
         {...fadeUp(0.35)}
-        className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-400 leading-tight"
+        className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-semibold text-slate-400 leading-tight"
       >
         I{" "}
         <TypeAnimation
@@ -107,7 +107,7 @@ export default function Introduction() {
           }}
           className="inline-flex items-center gap-2 text-sm text-slate-400 hover:text-accent transition-colors"
         >
-          <FiArrowDown size={16} className="animate-bounce" />
+          <FiArrowDown size={16} />
           Scroll down
         </a>
       </motion.div>

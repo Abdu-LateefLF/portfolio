@@ -1,7 +1,11 @@
 import { motion } from "framer-motion";
 import { FiArrowDown } from "react-icons/fi";
 import SectionHeader from "./ui/SectionHeader";
-import { fadeUpVariants, fadeUpViewport, fadeUpTransition } from "../lib/motion";
+import {
+  fadeUpVariants,
+  fadeUpViewport,
+  fadeUpTransition,
+} from "../lib/motion";
 import experience, { type ExperienceItem } from "../data/experience";
 
 function ExperienceCard({
@@ -20,7 +24,9 @@ function ExperienceCard({
       </div>
 
       {/* Card */}
-      <div className={`bg-white rounded-2xl border border-slate-200 shadow-sm p-6 sm:p-8 w-full ${!isLast ? "mb-8" : ""}`}>
+      <div
+        className={`bg-white rounded-2xl border border-slate-200 shadow-sm p-6 sm:p-8 w-full ${!isLast ? "mb-8" : ""}`}
+      >
         <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-1">
           <div className="flex items-center gap-3">
             {item.logo ? (
@@ -32,22 +38,29 @@ function ExperienceCard({
             ) : (
               <span
                 aria-hidden="true"
-                className="w-8 h-8 bg-accent/10 text-accent text-xs font-bold grid place-items-center"
+                className="w-8 h-8 bg-accent/10 text-accent text-xs font-semibold grid place-items-center"
               >
                 {item.company.slice(0, 2).toUpperCase()}
               </span>
             )}
             <div>
-              <h3 className="text-base font-bold text-slate-800">{item.role}</h3>
+              <h3 className="text-base font-semibold text-slate-800">
+                {item.role}
+              </h3>
               <p className="text-accent font-medium text-sm">{item.company}</p>
             </div>
           </div>
-          <span className="text-sm text-slate-400 font-mono shrink-0">{item.period}</span>
+          <span className="text-sm text-slate-400 font-mono shrink-0">
+            {item.period}
+          </span>
         </div>
 
         <ul className="mt-4 space-y-2">
           {item.bullets.map((bullet, i) => (
-            <li key={i} className="flex gap-2 text-sm text-slate-500 leading-relaxed">
+            <li
+              key={i}
+              className="flex gap-2 text-sm text-slate-500 leading-relaxed"
+            >
               <span className="text-accent mt-0.5 shrink-0">▹</span>
               {bullet}
             </li>
@@ -73,7 +86,7 @@ function ExperienceCard({
                 .getElementById(item.learnMore!.targetId)
                 ?.scrollIntoView({ behavior: "smooth" })
             }
-            className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-accent border border-accent px-4 py-2 hover:bg-accent hover:text-white transition-all duration-200"
+            className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-accent border border-accent px-4 py-2 hover:bg-accent hover:text-white transition-colors duration-200"
           >
             {item.learnMore.label}
             <FiArrowDown size={14} />
@@ -92,7 +105,7 @@ export default function Experience() {
         variants={fadeUpVariants}
         transition={fadeUpTransition()}
       >
-        <SectionHeader index="04. Experience" title="Where I've worked" />
+        <SectionHeader title="Experience" />
       </motion.div>
 
       <div>
@@ -103,7 +116,10 @@ export default function Experience() {
             variants={fadeUpVariants}
             transition={fadeUpTransition(0.1 * idx)}
           >
-            <ExperienceCard item={item} isLast={idx === experience.length - 1} />
+            <ExperienceCard
+              item={item}
+              isLast={idx === experience.length - 1}
+            />
           </motion.div>
         ))}
       </div>

@@ -22,7 +22,7 @@ function TechBadge({ item }: { item: TechItem }) {
   const LocalIcon = LOCAL_ICONS[item.name];
 
   return (
-    <div className="flex items-center gap-2 bg-slate-50 border border-slate-200 px-3 py-1.5 text-sm text-slate-600 hover:border-accent/40 hover:text-slate-800 transition-all duration-200">
+    <div className="flex items-center gap-2 bg-slate-50 border border-slate-200 px-3 py-1.5 text-sm text-slate-600 hover:border-accent/40 hover:text-slate-800 transition-colors duration-200">
       {item.icon ? (
         <img
           src={item.icon}
@@ -31,7 +31,10 @@ function TechBadge({ item }: { item: TechItem }) {
           loading="lazy"
         />
       ) : LocalIcon ? (
-        <LocalIcon aria-hidden="true" className="w-4 h-4 shrink-0 text-accent" />
+        <LocalIcon
+          aria-hidden="true"
+          className="w-4 h-4 shrink-0 text-accent"
+        />
       ) : (
         <span aria-hidden="true" className="w-4 h-4 bg-accent/10" />
       )}
@@ -48,7 +51,7 @@ export default function TechStack() {
         variants={fadeUpVariants}
         transition={fadeUpTransition()}
       >
-        <SectionHeader index="02. Skills" title="Technologies I work with" />
+        <SectionHeader title="Technologies I work with" />
       </motion.div>
 
       <div className="grid sm:grid-cols-2 gap-6">
@@ -60,7 +63,7 @@ export default function TechStack() {
             transition={fadeUpTransition(0.1 * catIdx)}
             className="bg-white rounded-2xl border border-slate-200 shadow-sm p-6"
           >
-            <h3 className="text-sm font-semibold text-slate-700 uppercase tracking-wider mb-4 pb-3 border-b border-slate-100">
+            <h3 className="text-sm font-semibold text-slate-700 mb-4 pb-3 border-b border-slate-100">
               {category.title}
             </h3>
             <div className="flex flex-wrap gap-2">
